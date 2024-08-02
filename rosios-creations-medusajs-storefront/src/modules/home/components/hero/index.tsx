@@ -1,25 +1,33 @@
+import Image from 'next/image'
 import { Button, Heading } from "@medusajs/ui"
 
 const Hero = () => {
   return (
-    <div className="h-[75vh] w-full border-b border-ui-border-base relative bg-ui-bg-subtle">
-      <div className="absolute inset-0 z-10 flex flex-col justify-center items-center text-center small:p-32 gap-6">
-        <span>
-          <Heading
-            level="h1"
-            className="text-3xl leading-10 text-ui-fg-base font-normal"
-          >
-            Welcome to Maria's Event Rentals
-          </Heading>
-          <Heading
-            level="h2"
-            className="text-3xl leading-10 text-ui-fg-subtle font-normal"
-          >
-            Transforming Events into Unforgettable Experiences
-          </Heading>
-        </span>
+    <div className="relative h-[75vh] w-full border-b border-ui-border-base">
+      <Image
+        src="https://via.placeholder.com/1920x1080"
+        alt="Placeholder Image"
+        className="absolute inset-0 object-cover object-center"
+        draggable={false}
+        quality={75}
+        sizes="100vw"
+        fill
+        priority
+      />
+      <div className="absolute inset-0 z-10 flex flex-col justify-center items-center text-center small:p-32 gap-6 bg-black bg-opacity-50">
+        <Heading
+          level="h1"
+          className="text-3xl leading-10 text-white font-normal"
+        >
+          Welcome to Maria's Event Rentals
+        </Heading>
+        <Heading
+          level="h2"
+          className="text-3xl leading-10 text-gray-200 font-normal"
+        >
+          Transforming Events into Unforgettable Experiences
+        </Heading>
       </div>
-      <div className="absolute inset-0 bg-hero-image bg-cover bg-center"></div>
     </div>
   )
 }
